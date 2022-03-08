@@ -33,9 +33,9 @@ var SampleSolver = module.exports = {
         var Direction = Games.require('./direction.js');
         var Element = Games.require('./elements.js');
         var Stuff = require('./../../engine/stuff.js');
-
+        console.log("getWalls", board.getWalls());
         // TODO your code here
 
-        return Direction.ACT;
+        return Direction;
     }
 };

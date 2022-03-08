@@ -78,17 +78,18 @@ var SampleBoard = module.exports = function(board){
     };
 
     board.toString = function() {
-        return Stuff.format("%s\n" +
-            "Hero at: %s\n" +
-            "Other heroes at: %s\n" +
-            "Bombs at: %s\n" +
-            "Gold at: %s",
-            board.boardAsString(),
-            board.getHero(),
-            board.getOtherHeroes(),
-            board.getBombs(),
-            board.getGold()
-        );
+        return "";
+        // return Stuff.format("%s\n" +
+        //     "Hero at: %s\n" +
+        //     "Other heroes at: %s\n" +
+        //     "Bombs at: %s\n" +
+        //     "Gold at: %s",
+        //     board.boardAsString(),
+        //     board.getHero(),
+        //     board.getOtherHeroes(),
+        //     board.getBombs(),
+        //     board.getGold()
+        // );
     };
 
     return board;

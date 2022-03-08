@@ -4,10 +4,11 @@
   "private": true,
   "dependencies": {
     "jest": "^26.6.3",
+    "nodemon": "^2.0.15",
     "ws": "~7.3.0"
   },
   "scripts": {
-    "start": "npm install && node engine/runner.js",
+    "start": "nodemon engine/runner.js",
     "test": "npm install && node tests/test.js"
   }
 }

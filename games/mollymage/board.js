@@ -71,6 +71,17 @@ var MollymageBoard = module.exports = function(board){
         return board.removeDuplicates(all);
     };
 
+    board.getMyBarriers = function() {
+        var all = board.getGhosts();
+        all = all.concat(board.getWalls());
+        // all = all.concat(board.getPotions());
+        all = all.concat(board.getTreasureBoxes());
+        all = all.concat(board.getOtherHeroes());
+        // all = all.concat(board.getEnemyHeroes());
+        // all = all.concat(board.getFutureBlasts());
+        return board.removeDuplicates(all);
+    };
+
     board.getGhosts = function() {
         return board.findAll(Element.GHOST);
     };
@@ -141,7 +152,16 @@ var MollymageBoard = module.exports = function(board){
         return board.contains(board.getBarriers(), new Point(x, y));
     };
 
+    board.isMyBarrierAt = function(x, y) {
+        if (new Point(x, y).isOutOf(board.size)) {
+            return true;
+        }
+
+        return board.contains(board.getMyBarriers(), new Point(x, y));
+    };
+
     board.toString = function() {
+        return '';
         return Stuff.format("%s\n" +
           "Hero at: %s\n" +
           "Other heroes at: %s\n" +
